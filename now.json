@@ -7,11 +7,19 @@
 			"use": "@now/static"
 		},
 		{
-			"src": "src/endpoints/**/*.js",
+			"src": "src/api/**/*.js",
 			"use": "@now/node"
 		},
 		{
 			"src": "docs/*.md",
+			"use": "@now/md",
+			"config": {
+				"language": "en",
+				"css": "/assets/style.css"
+			}
+		},
+		{ 
+			"src": "README.md",
 			"use": "@now/md",
 			"config": {
 				"language": "en",
@@ -29,11 +37,16 @@
 			"src": "/test",
 			"methods": ["GET"],
 			"dest": "/src/endpoints/test.js"
-    },
-    {
-      "src": "/docs",
-      "methods": ["GET"],
-      "dest": "/docs"
-    }
+    },    
+		{
+			"src": "docs/(.*).md",
+			"methods": ["GET"],
+			"dest": "/docs/$1.html"
+		},
+		{
+			"src": "/",
+			"methods": ["GET"],
+			"dest": "README.html"
+		}
 	]
 }
