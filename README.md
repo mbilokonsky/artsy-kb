@@ -32,7 +32,8 @@ Check out the [docs folder](/docs) for information about intended usage, archite
 
 ## Next Steps
 
-1. Make sure we're happy with schema in Hasura (add concepts of users? repos? commits for examples?)
-2. Expose an API via the endpoints in this project to allow HTTP access over read/write
-3. Write a slack app which reads/writes to our middleware app (this)
-4. Middleware can also render web views of entries etc.
+1. Finalize Entry schema in Hasura
+2. Implement 'core' API methods (`src/core/...`)
+3. Expose core API over API endpoints (`src/api/...`)
+4. Build out CLI over core API
+5. Build out web interface
