@@ -1,0 +1,23 @@
+# What is this?
+A tool for sharing knowledge within Artsy
+
+The goal is to have a slack integration such that we can say things like:
+
+`/kb write: how do I add gravity interop to a new repo?`
+`/kb lookup: gravity`
+
+and it would walk you through an interface.
+
+* interface: slack
+* interface: html renderer
+* interface: API
+
+# Data Layer
+We'll use Hasura for our data layer, which lets us build out postgres tables and then 
+automagically generates graphQL queries and mutations for us.
+
+### Next Steps
+1. Make sure we're happy with schema in Hasura (add concepts of users? repos? commits for examples?)
+2. Expose an API via the endpoints in this project to allow HTTP access over read/write
+3. Write a slack app which reads/writes to our middleware app (this)
+4. Middleware can also render web views of entries etc.

@@ -1,0 +1,39 @@
+{
+	"project": "artsy-kb",
+	"version": 2,
+	"builds": [
+		{
+			"src": "assets/*",
+			"use": "@now/static"
+		},
+		{
+			"src": "src/endpoints/**/*.js",
+			"use": "@now/node"
+		},
+		{
+			"src": "docs/*.md",
+			"use": "@now/md",
+			"config": {
+				"language": "en",
+				"css": "/assets/style.css"
+			}
+		}
+	],
+	"alias": "artsy-kb",
+	"env": {
+		"HGE_ENDPOINT": "@artsy_kb_graphql_url",
+		"ADMIN_SECRET": "@artsy_kb_admin_token"
+	},
+	"routes": [
+		{
+			"src": "/test",
+			"methods": ["GET"],
+			"dest": "/src/endpoints/test.js"
+    },
+    {
+      "src": "/docs",
+      "methods": ["GET"],
+      "dest": "/docs"
+    }
+	]
+}

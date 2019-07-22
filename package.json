@@ -1,0 +1,15 @@
+{
+  "name": "artsy-knowledgebase",
+  "version": "1.0.0",
+  "description": "A tool for gathering and sharing knowledge about technical problems.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "mbilokonsky",
+  "license": "ISC",
+  "dependencies": {
+    "graphql-tag": "^2.10.1",
+    "graphqurl": "^0.3.3"
+  }
+}
