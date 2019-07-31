@@ -34,9 +34,9 @@
 	},
 	"routes": [
 		{
-			"src": "/test",
+			"src": "/create",
 			"methods": ["GET"],
-			"dest": "/src/endpoints/test.js"
+			"dest": "/src/api/create.js"
     },    
 		{
 			"src": "docs/(.*).md",
