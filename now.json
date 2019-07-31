@@ -37,7 +37,12 @@
 			"src": "/create",
 			"methods": ["GET"],
 			"dest": "/src/api/create.js"
-    },    
+		},   
+		{
+			"src": "/search",
+			"methods": ["GET"],
+			"dest": "/src/api/search.js"
+		},
 		{
 			"src": "docs/(.*).md",
 			"methods": ["GET"],
