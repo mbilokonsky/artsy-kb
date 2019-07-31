@@ -1,3 +1,3 @@
 export default async function(req, res) {
-  res.end("ok!");
+  res.end("create!");
 }
