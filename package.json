@@ -9,6 +9,7 @@
   "author": "mbilokonsky",
   "license": "ISC",
   "dependencies": {
+    "gql-tag": "^1.0.1",
     "graphql-tag": "^2.10.1",
     "graphqurl": "^0.3.3"
   }
