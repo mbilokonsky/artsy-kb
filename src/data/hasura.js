@@ -1,8 +1,9 @@
 const { query } = require("graphqurl");
 const { HGE_ENDPOINT, ADMIN_SECRET } = require("../../config");
 
+
 module.exports = {
-  run_query: async (gql_query, args = null) => {
+  query: async (gql_query, args=null) => {
     try {
       const result = await query({
         query: gql_query,
@@ -13,9 +14,9 @@ module.exports = {
         variables: args || null
       });
 
-      return result.data;
-    } catch (e) {
-      return { error: e };
+      return result.data
+    } catch(e) {
+      return { error: e }
     }
   }
-};
+}
