@@ -1,57 +1,66 @@
 {
-	"project": "artsy-kb",
-	"version": 2,
-	"builds": [
-		{
-			"src": "assets/*",
-			"use": "@now/static"
-		},
-		{
-			"src": "src/api/**/*.js",
-			"use": "@now/node"
-		},
-		{
-			"src": "docs/*.md",
-			"use": "@now/md",
-			"config": {
-				"language": "en",
-				"css": "/assets/style.css"
-			}
-		},
-		{ 
-			"src": "README.md",
-			"use": "@now/md",
-			"config": {
-				"language": "en",
-				"css": "/assets/style.css"
-			}
-		}
-	],
-	"alias": "artsy-kb",
-	"env": {
-		"HGE_ENDPOINT": "@artsy_kb_graphql_url",
-		"ADMIN_SECRET": "@artsy_kb_admin_token"
-	},
-	"routes": [
-		{
-			"src": "/create",
-			"methods": ["GET"],
-			"dest": "/src/api/create.js"
-		},   
-		{
-			"src": "/search",
-			"methods": ["GET"],
-			"dest": "/src/api/search.js"
-		},
-		{
-			"src": "docs/(.*).md",
-			"methods": ["GET"],
-			"dest": "/docs/$1.html"
-		},
-		{
-			"src": "/",
-			"methods": ["GET"],
-			"dest": "README.html"
-		}
-	]
+  "project": "artsy-kb",
+  "version": 2,
+  "builds": [
+    {
+      "src": "assets/*",
+      "use": "@now/static"
+    },
+    {
+      "src": "src/api/**/*.js",
+      "use": "@now/node"
+    },
+    {
+      "src": "docs/*.md",
+      "use": "@now/md",
+      "config": {
+        "language": "en",
+        "css": "/assets/style.css"
+      }
+    },
+    {
+      "src": "README.md",
+      "use": "@now/md",
+      "config": {
+        "language": "en",
+        "css": "/assets/style.css"
+      }
+    }
+  ],
+  "alias": "artsy-kb",
+  "env": {
+    "HGE_ENDPOINT": "@artsy_kb_graphql_url",
+    "ADMIN_SECRET": "@artsy_kb_admin_token",
+    "SLACK_SIGNING_SECRET": "@artsy_slack_signing_secret",
+    "SLACK_ACCESS_TOKEN": "@artsy_slack_access_token",
+    "SLACK_CLIENT_ID": "@artsy_slack_client_id",
+    "SLACK_CLIENT_SECRET": "@artsy_slack_client_secret"
+  },
+  "routes": [
+    {
+      "src": "/create",
+      "methods": ["GET"],
+      "dest": "/src/api/create.js"
+    },
+    {
+      "src": "/search",
+      "methods": ["GET"],
+      "dest": "/src/api/search.js"
+    },
+    {
+      "src": "/_slack/.*",
+      "methods": ["POST"],
+      "dest": "/src/api/_slack.js"
+    },
+    {
+      "src": "docs/(.*).md",
+      "methods": ["GET"],
+      "dest": "/docs/$1.html"
+    },
+    {
+      "src": "/",
+      "methods": ["GET"],
+      "dest": "README.html"
+    }
+  ]
 }
