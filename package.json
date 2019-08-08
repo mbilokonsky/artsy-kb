@@ -4,13 +4,20 @@
   "description": "A tool for gathering and sharing knowledge about technical problems.",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "cli": "bin/kb"
+  },
+  "bin": {
+    "kb": "bin/kb"
   },
   "author": "mbilokonsky",
   "license": "ISC",
   "dependencies": {
     "gql-tag": "^1.0.1",
     "graphql-tag": "^2.10.1",
-    "graphqurl": "^0.3.3"
+    "graphqurl": "^0.3.3",
+    "minimist": "^1.2.0",
+    "ora": "^3.4.0",
+    "readline": "^1.3.0"
   }
 }
