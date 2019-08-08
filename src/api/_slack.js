@@ -10,8 +10,10 @@ module.exports = async (req, res) => {
 
   const output = {
     response_type: "ephemeral",
-    attachments: block,
-    text: json
+    attachments: [{
+      blocks: block
+    }],
+    text: "hello!"
   };
 
   res.json(output);
