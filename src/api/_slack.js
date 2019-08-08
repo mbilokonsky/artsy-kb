@@ -11,6 +11,7 @@ module.exports = async (req, res) => {
   const output = {
     response_type: "ephemeral",
     attachments: block,
+    text: json
   };
 
   res.json(output);
