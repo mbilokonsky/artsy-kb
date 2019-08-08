@@ -36,4 +36,4 @@ Check out the [docs folder](/docs) for information about intended usage, archite
 2. Implement 'core' API methods (`src/core/...`) [INPROGRESS]
 3. Expose core API over API endpoints (`src/api/...`) [INPROGRESS]
 4. Build out CLI over core API
-5. Build out web interface
+5. Build out slack interface ((`src/api/_slack`)) [INPROGRESS]
