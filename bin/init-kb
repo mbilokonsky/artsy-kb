@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+const config = require("../src/clients/cli/config");
+const readline = require("readline");
+const config_path = config.config_location;
+const fs = require("fs");
+
+if (fs.existsSync(config_path)) {
+  return console.log(
+    `Your configuration already exists - if this is weird, go look at ${config_path}`
+  );
+}
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question("What is your artsy email address? ", answer => {
+  console.log(`Thank you for your valuable feedback: ${answer}`);
+
+  rl.close();
+});
