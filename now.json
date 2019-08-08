@@ -38,9 +38,14 @@
   },
   "routes": [
     {
-      "src": "/create",
-      "methods": ["GET"],
-      "dest": "/src/api/create.js"
+      "src": "/ask",
+      "methods": ["POST"],
+      "dest": "/src/api/ask.js"
+    },
+    {
+      "src": "/answer",
+      "methods": ["POST"],
+      "dest": "/src/api/answer.js"
     },
     {
       "src": "/search",

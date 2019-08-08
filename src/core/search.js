@@ -1,36 +1,24 @@
 const gql = require("graphql-tag");
-import { run_query } from "../data/hasura";
+const run_query = require("../data/hasura").run_query;
 
 const query_string = gql`
-  query questions_by_tag($tag: String) {
-    _tags(where: { tag: { _eq: $tag } }) {
-      usages {
-        question {
-          question_text
-          answers {
-            answer_text
-            author_id
-          }
-          asker_id
-          tags {
-            tag_id
-          }
-          repos {
-            repo {
-              name
-              url
-            }
-          }
-          links {
-            link {
-              label
-              url
-            }
-          }
+  query search_by_tag($tags: jsonb) {
+    questions(where: { tags: { _contains: $tags } }) {
+      id
+      question_text
+      tags
+      asker {
+        email
+      }
+      answers {
+        id
+        author {
+          email
         }
+        answer_text
       }
     }
   }
 `;
 
-module.exports = async tag => await run_query(query_string, { tag });
+module.exports = async tags => await run_query(query_string, { tags });

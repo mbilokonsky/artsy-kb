@@ -1,6 +1,6 @@
-import { search } from "../core";
+const search = require("../core").search;
 export default async function(req, res) {
-  const { tag } = req.query;
-  const result = await search(tag);
+  const { tags } = req.query;
+  const result = await search(tags);
   res.end(JSON.stringify(result, null, 2));
 }
