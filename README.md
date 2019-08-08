@@ -32,8 +32,8 @@ Check out the [docs folder](/docs) for information about intended usage, archite
 
 ## Next Steps
 
-1. Finalize Entry schema in Hasura
-2. Implement 'core' API methods (`src/core/...`)
-3. Expose core API over API endpoints (`src/api/...`)
+1. Finalize Entry schema in Hasura [DONE]
+2. Implement 'core' API methods (`src/core/...`) [INPROGRESS]
+3. Expose core API over API endpoints (`src/api/...`) [INPROGRESS]
 4. Build out CLI over core API
 5. Build out web interface
