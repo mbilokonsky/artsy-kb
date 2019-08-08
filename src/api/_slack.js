@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
     attachments: block,
   };
 
-  res.json(block);
+  res.json(output);
 };
 
 const block = [{
